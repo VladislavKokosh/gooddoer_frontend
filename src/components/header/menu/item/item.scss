@@ -1,0 +1,24 @@
+@import "../../../../assets/styles/colors";
+
+.menu-item {
+	height: 36px;
+	width: 260px;
+	font-family: "Helvetica-Bold";
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 26px;
+	white-space: nowrap;
+	color: $primary;
+
+	&_active {
+		color: #222;
+		height: 36px;
+		border-bottom: 2px double #96ce23;
+	}
+
+	&:hover {
+		cursor: pointer;
+		color: $secondary;
+	}
+}

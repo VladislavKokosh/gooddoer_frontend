@@ -1,0 +1,20 @@
+.error-page {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #000;
+	&_title {
+		font-size: 40px;
+		font-family: "Avenir";
+	}
+	&_description {
+		font-size: 18px;
+		font-family: "Avenir-Regular";
+	}
+	&_error {
+		font-size: 18px;
+		font-family: "Avenir-It";
+	}
+}
