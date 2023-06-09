@@ -1,17 +1,17 @@
 @import "../../assets/styles/colors";
 
 .button-ui {
-    align-items: center;
-    background-color: $primary;
-    border-radius: 14px;
-    font-family: "Avenir";
-    color: #fff;
-    display: flex;
-    font-size: 18px;
-    line-height: 20px;
-    padding: 14px 24px;
-    &:hover {
-        cursor: pointer;
-        background-color: $secondary;
-      }
+	align-items: center;
+	background-color: $primary;
+	border-radius: 14px;
+	font-family: "Avenir";
+	color: #fff;
+	display: flex;
+	font-size: 18px;
+	line-height: 20px;
+	padding: 14px 24px;
+	&:hover {
+		cursor: pointer;
+		background-color: $secondary;
+	}
 }

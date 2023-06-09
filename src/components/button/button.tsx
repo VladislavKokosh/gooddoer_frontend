@@ -1,12 +1,14 @@
-import { IButtonProps } from "./button.types";
-import "./button.scss";
+import { FC } from "react";
 
-const Button: React.FC<IButtonProps> = ({ title, onClick }) => {
-  return (
-    <div className="button-ui" onClick={onClick}>
-      {title}
-    </div>
-  );
+import "./button.scss";
+import { IButtonProps } from "./button.types";
+
+const Button: FC<IButtonProps> = ({ title, onClick }) => {
+	return (
+		<div className="button-ui" onClick={onClick}>
+			{title}
+		</div>
+	);
 };
 
 export { Button };
