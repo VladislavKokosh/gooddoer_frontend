@@ -1,0 +1,34 @@
+@font-face{
+    font-family: 'Montserrat-Medium';
+    src: url('./Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Montserrat-Thin';
+    src: url('./Montserrat-Thin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Condensed-Bold';
+    src: url('./Roboto-Condensed-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('./Averta.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('./AvenirNextLTPro-Bold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Avenir-Regular';
+    src: url('./AvenirNextLTPro-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Avenir-It';
+    src: url('./AvenirNextLTPro-It.otf') format('truetype');
+}
