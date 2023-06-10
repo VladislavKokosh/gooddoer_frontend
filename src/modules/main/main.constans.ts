@@ -26,7 +26,7 @@ const featureItems: IFeature[] = [
 		image: Delivery,
 		title: "Ease of use for both donors and charities.",
 		description:
-			"ChildChain's user-friendly platform makes donating simple and easy for donors while helping charities to manage donated funds with ease.",
+			"Gooddoer's user-friendly platform makes donating simple and easy for donors while helping charities to manage donated funds with ease.",
 		imagePosition: EPosotions.Left,
 	},
 ];
