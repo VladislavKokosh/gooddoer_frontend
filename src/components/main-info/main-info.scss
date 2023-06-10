@@ -1,0 +1,32 @@
+@import "../../assets/styles/colors";
+
+.main-info {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 80px;
+	padding: 60px 0px 60px 40px;
+	background: linear-gradient(180deg, rgba(24, 24, 31, 0) 25%, $accent);
+	&-container_title {
+		font-family: "Helvetica-Bold";
+		color: $primary;
+		font-size: 66px;
+		width: 600px;
+		margin: 0;
+		padding-bottom: 30px;
+	}
+	&-container_description {
+		display: inline-block;
+		font-family: "Helvetica";
+		color: $jet;
+		font-size: 18px;
+		width: 600px;
+	}
+	&-image {
+		align-self: flex-end;
+		width: 650px;
+		height: 450px;
+		border-radius: 20px 0px 0px 20px;
+		background: url("../../assets/images/main-image.jpeg") center/cover
+			no-repeat;
+	}
+}

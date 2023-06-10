@@ -1,12 +1,18 @@
-@import "../../assets//styles/colors";
+@import "../../assets/styles/colors";
 
 .header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: fixed;
 	height: 80px;
 	background-color: #ffffff;
 	width: 100%;
-	padding-left: 20px;
-	border-bottom: 1px solid $primary;
+	padding: 0 20px;
+	&_logo {
+		min-width: 150px;
+		min-height: 150px;
+		max-width: 150px;
+		max-height: 150px;
+	}
 }

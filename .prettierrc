@@ -18,7 +18,7 @@
 		"^@/assets/(.*)$",
 		"^../(.*)",
 		"^./(.*)",
-		"(.scss)$"
+		"^.(css|scss)$"
 	],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true

@@ -1,9 +1,14 @@
+import { MainInfo } from "../components";
 import { Layout } from "../modules";
 
 import "./app.scss";
 
 const App = () => {
-	return <Layout />;
+	return (
+		<Layout>
+			<MainInfo />
+		</Layout>
+	);
 };
 
 export { App };
