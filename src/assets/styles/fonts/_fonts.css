@@ -42,3 +42,8 @@
 	font-family: "Helvetica-Bold";
 	src: url("./Helvetica-Bold.ttf") format("truetype");
 }
+
+@font-face {
+	font-family: "Helvetica-Light";
+	src: url("./helvetica-light-587ebe5a59211.ttf") format("truetype");
+}
