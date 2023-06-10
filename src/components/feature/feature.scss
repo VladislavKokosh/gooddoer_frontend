@@ -1,0 +1,72 @@
+@import "../../assets/styles/colors";
+
+.feature {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@media (max-width: 1000px) {
+		flex-direction: column;
+	}
+
+	&.right {
+		.feature-image {
+			border-radius: 20px 0 0 20px;
+			@media (max-width: 1000px) {
+				border-radius: 20px;
+				max-width: 80%;
+				min-width: 80%;
+			}
+		}
+	}
+
+	&.left {
+		flex-direction: row-reverse;
+		.feature-image {
+			border-radius: 0 20px 20px 0;
+			@media (max-width: 1000px) {
+				border-radius: 20px;
+				max-width: 80%;
+				min-width: 80%;
+			}
+		}
+		@media (max-width: 1000px) {
+			flex-direction: column;
+		}
+	}
+
+	&-container {
+		display: flex;
+		flex-direction: column;
+		width: 45%;
+		padding: 20px;
+		@media (max-width: 1000px) {
+			width: 100%;
+			align-items: center;
+		}
+		&_title {
+			@media (max-width: 1000px) {
+				text-align: center;
+			}
+			padding: 5px;
+			font-family: "Helvetica-Bold";
+			font-size: 40px;
+			font-weight: 800;
+			color: $primary;
+		}
+		&_description {
+			@media (max-width: 1000px) {
+				text-align: center;
+			}
+			font-family: "Helvetica";
+			color: $jet;
+			font-size: 18px;
+			padding-bottom: 20px;
+		}
+	}
+	&-image {
+		max-width: 45%;
+		max-height: 400px;
+		min-height: 400px;
+		min-width: 45%;
+	}
+}
