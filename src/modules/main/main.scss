@@ -1,0 +1,8 @@
+.main {
+	& > *:not(:last-child) {
+		margin-bottom: 100px;
+		@media (max-width: 1000px) {
+			margin-bottom: 50px;
+		}
+	}
+}
