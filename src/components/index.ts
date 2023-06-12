@@ -6,3 +6,5 @@ export * from "./feature";
 export * from "./icon-comment";
 export * from "./testimonials";
 export * from "./questions";
+export * from "./donate-info";
+
