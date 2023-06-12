@@ -1,4 +1,4 @@
-import { Feature, MainInfo } from "../../components";
+import { Feature, MainInfo, Questions } from "../../components";
 import { Testimonials } from "../../components";
 
 import { featureItems } from "./main.constans";
@@ -12,6 +12,7 @@ const Main = () => {
 				<Feature key={id} {...rest} />
 			))}
 			<Testimonials />
+			<Questions />
 		</div>
 	);
 };

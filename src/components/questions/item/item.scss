@@ -1,0 +1,19 @@
+@import "../../../assets/styles/colors";
+
+.question-item {
+	padding-top: 10px;
+	border-top: 1px solid $gray;
+	width: 60%;
+	@media (max-width: 1000px) {
+		width: 80%;
+	}
+	h3 {
+		font-family: "Helvetica-Bold";
+		font-size: 22px;
+		color: $jet;
+	}
+	div {
+		font-family: "Helvetica";
+		font-size: 16px;
+	}
+}
