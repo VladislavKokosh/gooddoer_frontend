@@ -1,4 +1,5 @@
 import Man from "../../assets/images/man-two.png";
+import { ReactComponent as Square } from "../../assets/images/square.svg";
 import { IconComment } from "../icon-comment";
 
 import "./testimonials.scss";
@@ -6,6 +7,7 @@ import "./testimonials.scss";
 const Testimonials = () => {
 	return (
 		<div className="testimonials">
+			<Square className="testimonials-square" />
 			<h3 className="testimonials-title">
 				"As a charity, we appreciate GoodDoer's transparency and the ease that
 				the platform provides for managing donations."
