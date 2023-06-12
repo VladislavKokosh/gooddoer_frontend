@@ -1,4 +1,3 @@
-
 import { DonateInfo, Feature, MainInfo, Questions } from "../../components";
 import { Testimonials } from "../../components";
 
