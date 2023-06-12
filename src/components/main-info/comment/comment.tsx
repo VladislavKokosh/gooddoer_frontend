@@ -1,9 +1,18 @@
+import Man from "../../../assets/images/man.png";
+import { IconComment } from "../../../components";
+
 import "./comment.scss";
 
 const Comment = () => {
 	return (
 		<div className="comment">
-			<div className="comment-photo" />
+			<IconComment
+				icon={Man}
+				width={60}
+				height={60}
+				borderThickness={2}
+				borderColor={"#343434"}
+			/>
 			<div className="comment-container">
 				<h5 className="comment-container_title">
 					“I'm proud to support GoodDoer's mission and feel that my donations
