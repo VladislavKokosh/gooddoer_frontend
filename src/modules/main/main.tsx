@@ -1,4 +1,5 @@
 import { Feature, MainInfo } from "../../components";
+import { Testimonials } from "../../components";
 
 import { featureItems } from "./main.constans";
 import "./main.scss";
@@ -10,6 +11,7 @@ const Main = () => {
 			{featureItems.map(({ id, ...rest }) => (
 				<Feature key={id} {...rest} />
 			))}
+			<Testimonials />
 		</div>
 	);
 };
