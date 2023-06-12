@@ -9,7 +9,6 @@ const Feature: FC<IFeatureProps> = ({
 	description,
 	imagePosition,
 }) => {
-	console.log(image);
 	return (
 		<div className={`feature ${imagePosition}`}>
 			<div className="feature-container">
