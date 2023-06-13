@@ -14,6 +14,9 @@
 			font-size: 66px;
 			margin: 0;
 			padding-bottom: 30px;
+			@media (max-width: 420px) {
+				font-size: 50px;
+			}
 		}
 		&_description {
 			display: inline-block;
