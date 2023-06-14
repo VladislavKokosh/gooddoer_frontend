@@ -6,6 +6,7 @@ import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import { BurgerMenu } from "./burger-menu";
 import "./header.scss";
 import { Menu } from "./menu";
+import { Wallet } from "./wallet";
 
 const Header = () => {
 	const ref = useRef(null);
@@ -14,7 +15,8 @@ const Header = () => {
 	return (
 		<div className="header" ref={ref}>
 			<Logo className="header_logo" />
-			{size?.width && size.width > 750 ? <Menu /> : <BurgerMenu />}
+			{size?.width && size.width > 1000 ? <Menu /> : <BurgerMenu />}
+			<Wallet />
 		</div>
 	);
 };
