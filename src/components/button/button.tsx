@@ -1,8 +1,6 @@
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import { FC } from "react";
 
-import { ReactComponent as Icon } from "../../assets/icons/button-icon.svg";
-
 import "./button.scss";
 import { IButtonProps } from "./button.types";
 

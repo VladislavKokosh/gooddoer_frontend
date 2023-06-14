@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-
 import { Layout } from "../modules";
 import { Main } from "../modules";
 
