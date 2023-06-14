@@ -6,6 +6,7 @@
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 		"@babel/runtime": "^7.22.5",
 		"@cfx-kit/wallet-avatar": "^0.0.5",
+		"@emotion/react": "^11.11.1",
 		"@emotion/styled": "^11.11.0",
 		"@metamask/sdk": "^0.3.2",
 		"@mui/icons-material": "^5.11.16",
