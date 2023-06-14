@@ -53,7 +53,10 @@ const Wallet = () => {
 					<Button title="Connect MetaMask" hasSVG onClick={connectWallet} />
 				)
 			) : (
-				<Button title="Install MetaMask" />
+				<Button
+					title="Install MetaMask"
+					onClick={() => window.open("https://metamask.io/download/", "_blank")}
+				/>
 			)}
 		</div>
 	);
