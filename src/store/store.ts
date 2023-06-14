@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import * as providerAsyncActions from "./provider/provider.actions";
-import { reducer as providerReducer } from "./provider/provider.slice";
+import {
+	actions as modalActions,
+	reducer as modalReducer,
+} from "./modal/modal.slice";
 
 const store = configureStore({
 	reducer: {
-		provider: providerReducer,
+		modal: modalReducer,
 	},
 	devTools: true,
 });
@@ -14,7 +16,7 @@ type TStore = ReturnType<typeof store.getState>;
 type AppDispatch = typeof store.dispatch;
 
 const allActions = {
-	...providerAsyncActions,
+	...modalActions,
 };
 
 export { store, allActions };

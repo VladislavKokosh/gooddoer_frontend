@@ -12,6 +12,7 @@ const DonateInfo = () => {
 				<div>
 					{donateInfoIcons.map((icon) => (
 						<IconComment
+							key={icon}
 							icon={icon}
 							width={60}
 							height={60}

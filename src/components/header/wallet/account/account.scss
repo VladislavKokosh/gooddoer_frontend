@@ -1,0 +1,30 @@
+@import "../../../../assets/styles/colors";
+
+.account {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Helvetica-Bold";
+	padding: 8px 15px;
+	background-color: $primary;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	border: 2px solid transparent;
+	cursor: pointer;
+	&:hover {
+		background-color: $secondary;
+	}
+	&:active {
+		border-color: $jet;
+	}
+	&_icon {
+		border: 2px solid white;
+		margin-right: 10px;
+		border-radius: 50px;
+		max-width: 25px;
+		max-height: 25px;
+		min-width: 25px;
+		min-height: 25px;
+	}
+}
