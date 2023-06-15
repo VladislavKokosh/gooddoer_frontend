@@ -24,10 +24,10 @@
 		animation-name: slidegdz;
 		animation-fill-mode: forwards;
 	}
-}
 
-.success {
-	border-top: 4px solid rgb(0, 197, 63);
+	&.success {
+		border-top: 4px solid rgb(0, 197, 63);
+	}
 }
 
 @keyframes slidegdz {
