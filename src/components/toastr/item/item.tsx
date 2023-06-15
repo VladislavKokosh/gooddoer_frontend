@@ -1,14 +1,33 @@
 import { FC, memo } from "react";
 
-import { TToastrConfig } from "../toastr.types";
+import { useActions } from "../../../hooks";
 
 import "./item.scss";
+import { IItemProps } from "./item.types";
 
-const Item: FC<TToastrConfig> = ({ title, type, description }) => {
+const Item: FC<IItemProps> = ({
+	title,
+	type,
+	description,
+	autoCloseTime,
+	id,
+}) => {
+	const { deleteToastrFromQueue } = useActions();
+
 	return (
-		<div className={`toastr-item ${type}`}>
+		<div
+			className={`toastr-item ${type}`}
+			onClick={(e) => {
+				e.stopPropagation();
+				deleteToastrFromQueue(id);
+			}}
+		>
 			<div className={`toastr-item_title`}>{title}</div>
 			<div className={`toastr-item_description`}>{description}</div>
+			<div
+				className={"toastr-item_loading"}
+				style={{ animationDuration: `${autoCloseTime / 1000}s` }}
+			/>
 		</div>
 	);
 };

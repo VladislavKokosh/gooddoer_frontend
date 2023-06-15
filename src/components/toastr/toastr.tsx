@@ -1,7 +1,6 @@
 import { FC, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useSelector } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
 
 import { EToastrContent, EToastrType } from "../../enum";
 import { useActions } from "../../hooks";
@@ -52,7 +51,12 @@ const Toastr: FC<{ autoCloseTime: number }> = ({ autoCloseTime }) => {
 		? createPortal(
 				<div className="toastr-container" ref={ref}>
 					{queue.map((toastr) => (
-						<MemoItem key={uuidv4()} {...toastrs[toastr.content]} />
+						<MemoItem
+							key={toastr.id}
+							{...toastrs[toastr.content]}
+							id={toastr.id}
+							autoCloseTime={autoCloseTime}
+						/>
 					))}
 				</div>,
 				hasToastrHTMLElement

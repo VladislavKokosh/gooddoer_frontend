@@ -13,8 +13,13 @@ const toastrSlice = createSlice({
 		addToastrToQueue: (state, { payload }: PayloadAction<Item>) => {
 			state.queue.push(payload);
 		},
-		deleteToastrFromQueue: (state) => {
-			state.queue.shift();
+		deleteToastrFromQueue: (
+			state,
+			{ payload }: PayloadAction<string | undefined>
+		) => {
+			state.queue = !payload
+				? state.queue.slice(1)
+				: state.queue.filter((q) => q.id !== payload);
 		},
 	},
 });

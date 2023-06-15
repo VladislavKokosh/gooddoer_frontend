@@ -11,6 +11,18 @@
 	padding: 0 20px;
 	z-index: 1;
 	&_logo {
+		@media (max-width: 550px) {
+			min-width: 120px;
+			min-height: 120px;
+			max-width: 120px;
+			max-height: 120px;
+		}
+		@media (max-width: 400px) {
+			min-width: 100px;
+			min-height: 100px;
+			max-width: 100px;
+			max-height: 100px;
+		}
 		min-width: 150px;
 		min-height: 150px;
 		max-width: 150px;

@@ -2,6 +2,7 @@
 @import "../../../assets/styles/fonts/_fonts.css";
 
 .toastr-item {
+	position: relative;
 	padding: 10px 10px;
 	background-color: white;
 	color: black;
@@ -12,8 +13,28 @@
 		margin-top: 2px;
 		font-family: "Helvetica";
 	}
+	&_loading {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		height: 3px;
+		background-color: rgba(84, 84, 84, 0.423);
+		animation-iteration-count: 1;
+		animation-name: slidegdz;
+		animation-fill-mode: forwards;
+	}
 }
 
 .success {
-	border-top: 4px solid rgb(23, 249, 94);
+	border-top: 4px solid rgb(0, 197, 63);
+}
+
+@keyframes slidegdz {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 0;
+	}
 }
