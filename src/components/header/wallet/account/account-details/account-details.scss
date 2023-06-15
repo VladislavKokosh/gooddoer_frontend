@@ -1,0 +1,69 @@
+@import "../../../../../assets/styles/colors";
+@import "../../../../../assets/styles/fonts/_fonts.css";
+
+.account-details {
+	background-color: $air;
+	padding: 20px;
+	margin-top: 20px;
+	border-radius: 5px;
+
+	&_header {
+		padding: 10px;
+		font-size: 20px;
+		font-family: "Helvetica-Bold";
+		color: white;
+	}
+
+	&_content {
+		padding: 10px;
+		display: flex;
+		align-items: center;
+		font-size: 20px;
+		font-family: "Helvetica-Bold";
+		color: white;
+		&_icon {
+			border: 2px solid white;
+			margin-right: 10px;
+			border-radius: 50px;
+			max-width: 30px;
+			max-height: 30px;
+			min-width: 30px;
+			min-height: 30px;
+		}
+	}
+
+	&_footer {
+		padding: 10px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 14px;
+		font-family: "Helvetica-Bold";
+		color: white;
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+
+		&_button {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding: 10px;
+			cursor: pointer;
+			&:hover {
+				background-color: rgba(182, 182, 182, 0.423);
+				border-radius: 5px;
+			}
+			&:active {
+				from {
+					transform: scale(0);
+					opacity: 1;
+				}
+				to {
+					transform: scale(1);
+					opacity: 0;
+				}
+			}
+		}
+	}
+}

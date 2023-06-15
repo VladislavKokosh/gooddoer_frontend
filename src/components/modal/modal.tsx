@@ -13,7 +13,7 @@ import { IModalProps } from "./modal.types";
 const Modal: FC<IModalProps> = ({ type, children }) => {
 	const ref = useRef(null);
 	const { type: typeSelector } = useSelector(getModalState);
-	const { changeVisible } = useActions();
+	const { changeVisibleModal } = useActions();
 
 	const hasModalHTMLElement = useMemo(
 		() => document.getElementById("modal"),
@@ -22,7 +22,7 @@ const Modal: FC<IModalProps> = ({ type, children }) => {
 
 	useClickAway(
 		() => {
-			changeVisible(null);
+			changeVisibleModal(null);
 		},
 		ref,
 		"mousedown"
@@ -38,7 +38,7 @@ const Modal: FC<IModalProps> = ({ type, children }) => {
 								className="modal-window_button"
 								onClick={(e) => {
 									e.stopPropagation();
-									changeVisible(null);
+									changeVisibleModal(null);
 								}}
 							/>
 						</div>
