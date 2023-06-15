@@ -5,14 +5,18 @@ import { EModalTypes } from "../../../../enum";
 import { useActions } from "../../../../hooks";
 import { Modal } from "../../../modal";
 
+import { AccountDetails } from "./account-details";
 import "./account.scss";
 import { IAccountProps } from "./account.types";
 
 const Account: FC<IAccountProps> = ({ address }) => {
-	const { changeVisible } = useActions();
+	const { changeVisibleModal } = useActions();
 
 	return (
-		<div className="account" onClick={() => changeVisible(EModalTypes.Account)}>
+		<div
+			className="account"
+			onClick={() => changeVisibleModal(EModalTypes.Account)}
+		>
 			<img
 				className="account_icon"
 				src={address && generateAvatarURL(address)}
@@ -23,7 +27,7 @@ const Account: FC<IAccountProps> = ({ address }) => {
 				6
 			)}...${address?.slice(-6)}`}</div>
 			<Modal type={EModalTypes.Account}>
-				<div></div>
+				<AccountDetails address={address && address} />
 			</Modal>
 		</div>
 	);

@@ -10,7 +10,10 @@ const modalSlice = createSlice({
 	name: "modal",
 	initialState,
 	reducers: {
-		changeVisible: (state, { payload }: PayloadAction<IInitState["type"]>) => {
+		changeVisibleModal: (
+			state,
+			{ payload }: PayloadAction<IInitState["type"]>
+		) => {
 			state.type = payload;
 		},
 	},
