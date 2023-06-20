@@ -9,3 +9,4 @@ export * from "./questions";
 export * from "./donate-info";
 export * from "./footer";
 export * from "./loader-image";
+export * from "./toastr";

@@ -1,5 +1,6 @@
 import { useSize } from "ahooks";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 
@@ -14,7 +15,9 @@ const Header = () => {
 
 	return (
 		<div className="header" ref={ref}>
-			<Logo className="header_logo" />
+			<Link to={"/"}>
+				<Logo className="header_logo" />
+			</Link>
 			{size?.width && size.width > 1000 ? <Menu /> : <BurgerMenu />}
 			<Wallet />
 		</div>

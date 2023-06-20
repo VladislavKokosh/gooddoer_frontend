@@ -1,15 +1,17 @@
-import { FC } from "react";
-import { PropsWithChildren } from "react";
+import { Outlet } from "react-router-dom";
 
-import { Footer, Header } from "../../components";
+import { Footer, Header, Toastr } from "../../components";
 
 import "./layout.scss";
 
-const Layout: FC<PropsWithChildren> = ({ children }) => {
+const Layout = () => {
 	return (
 		<div className="layout">
 			<Header />
-			<div className="layout-container">{children}</div>
+			<div className="layout-container">
+				<Outlet />
+				<Toastr autoCloseTime={3000} />
+			</div>
 			<Footer />
 		</div>
 	);

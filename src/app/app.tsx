@@ -1,15 +1,16 @@
-import { Toastr } from "../components/toastr";
-import { Layout } from "../modules";
-import { Main } from "../modules";
+import { BrowserRouter } from "react-router-dom";
+
+import { Routes } from "../routes";
 
 import "./app.scss";
 
 const App = () => {
 	return (
-		<Layout>
-			<Main />
-			<Toastr autoCloseTime={3000} />
-		</Layout>
+		<>
+			<BrowserRouter>
+				<Routes />
+			</BrowserRouter>
+		</>
 	);
 };
 

@@ -1,5 +1,10 @@
-import { DonateInfo, Feature, MainInfo, Questions } from "../../components";
-import { Testimonials } from "../../components";
+import {
+	DonateInfo,
+	Feature,
+	MainInfo,
+	Questions,
+	Testimonials,
+} from "../../components";
 
 import { featureItems } from "./main.constans";
 import "./main.scss";
