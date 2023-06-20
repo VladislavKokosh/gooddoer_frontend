@@ -1,5 +1,8 @@
 import { FC } from "react";
 
+import { useImagePreload } from "../../hooks";
+import { LoaderImage } from "../loader-image";
+
 import "./feature.scss";
 import { IFeatureProps } from "./feature.types";
 
@@ -9,19 +12,19 @@ const Feature: FC<IFeatureProps> = ({
 	description,
 	imagePosition,
 }) => {
+	const imageLoaded = useImagePreload(image);
+
 	return (
 		<div className={`feature ${imagePosition}`}>
 			<div className="feature-container">
 				<div className="feature-container_title">{title}</div>
 				<div className="feature-container_description">{description}</div>
 			</div>
-			<div
-				className="feature-image"
-				style={{
-					background: `url(${image}) center/cover
-			no-repeat`,
-				}}
-			/>
+			{imageLoaded ? (
+				<img className="feature-image" src={image} alt="" />
+			) : (
+				<LoaderImage />
+			)}
 		</div>
 	);
 };

@@ -8,3 +8,4 @@ export * from "./testimonials";
 export * from "./questions";
 export * from "./donate-info";
 export * from "./footer";
+export * from "./loader-image";
