@@ -10,11 +10,10 @@
 	line-height: 26px;
 	white-space: nowrap;
 	color: $primary;
+	border-bottom: 2px double transparent;
 
 	&_active {
-		color: #222;
-		height: 36px;
-		border-bottom: 2px double #96ce23;
+		border-bottom: 2px double $secondary;
 	}
 
 	&:hover {
