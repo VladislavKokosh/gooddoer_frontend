@@ -1,0 +1,12 @@
+.menu-account {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 500;
+	background-color: white;
+	padding: 22px;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+}

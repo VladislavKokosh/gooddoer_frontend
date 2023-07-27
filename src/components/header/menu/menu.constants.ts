@@ -9,7 +9,7 @@ export const items: IMenuItem[] = [
 	{
 		id: 2,
 		title: "HOW TO HELP",
-		link: "/how-help",
+		link: "/how-to-help",
 	},
 	{
 		id: 3,

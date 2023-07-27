@@ -1,12 +1,14 @@
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 
+import { useWindowSize } from "../../../hooks";
 import { Button } from "../../button";
 
 import { Account } from "./account";
 import "./wallet.scss";
 
 const Wallet = () => {
+	const [width] = useWindowSize();
 	const [isMetamaskInstalled, setIsMetamaskInstalled] =
 		useState<boolean>(false);
 	const [account, setAccount] = useState<string | null>(null);
@@ -50,7 +52,11 @@ const Wallet = () => {
 		<div className="wallet">
 			{isMetamaskInstalled ? (
 				(account && <Account address={account} />) || (
-					<Button title="Connect MetaMask" hasSVG onClick={connectWallet} />
+					<Button
+						title={width > 560 ? `Connect MetaMask` : "Connect"}
+						hasSVG
+						onClick={connectWallet}
+					/>
 				)
 			) : (
 				<Button

@@ -1,6 +1,7 @@
 @import "../../../../assets/styles/colors";
 
 .account {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -21,9 +22,6 @@
 	&:hover {
 		background-color: $secondary;
 	}
-	&:active {
-		border-color: $jet;
-	}
 	&_icon {
 		@media (max-width: 550px) {
 			display: none;
@@ -35,5 +33,9 @@
 		max-height: 25px;
 		min-width: 25px;
 		min-height: 25px;
+	}
+
+	&_address {
+		padding-top: 3px;
 	}
 }

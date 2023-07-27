@@ -10,7 +10,7 @@ import { Menu } from "./menu";
 import { Wallet } from "./wallet";
 
 const Header = () => {
-	const ref = useRef(null);
+	const ref = useRef<HTMLInputElement>(null);
 	const size = useSize(ref);
 
 	return (
