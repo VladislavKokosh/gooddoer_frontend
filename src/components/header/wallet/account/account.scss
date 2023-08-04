@@ -1,4 +1,7 @@
 @import "../../../../assets/styles/colors";
+.container-account {
+	width: 200px;
+}
 
 .account {
 	position: relative;
@@ -13,19 +16,17 @@
 	font-size: 16px;
 	border: 2px solid transparent;
 	cursor: pointer;
+	width: 100%;
+
 	@media (max-width: 550px) {
 		font-size: 12px;
 	}
+
 	@media (max-width: 400px) {
 		font-size: 10px;
 	}
-	&:hover {
-		background-color: $secondary;
-	}
+
 	&_icon {
-		@media (max-width: 550px) {
-			display: none;
-		}
 		border: 2px solid white;
 		margin-right: 10px;
 		border-radius: 50px;
@@ -33,6 +34,9 @@
 		max-height: 25px;
 		min-width: 25px;
 		min-height: 25px;
+		@media (max-width: 550px) {
+			display: none;
+		}
 	}
 
 	&_address {

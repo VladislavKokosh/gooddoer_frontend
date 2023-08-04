@@ -1,0 +1,25 @@
+@import "../../../../../../assets/styles/colors";
+
+.menu-item-account {
+	display: block;
+	height: 36px;
+	padding: 0px 5px;
+	font-family: "Helvetica-Bold";
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 26px;
+	white-space: nowrap;
+	color: $primary;
+	border-bottom: 2px double transparent;
+	transition: color 0.3s ease;
+
+	&_active {
+		border-bottom: 2px double $secondary;
+	}
+
+	&:hover {
+		cursor: pointer;
+		color: $secondary;
+	}
+}

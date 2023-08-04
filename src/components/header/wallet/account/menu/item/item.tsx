@@ -13,7 +13,7 @@ const MenuItem: FC<IMenuAccountItemProps> = ({ title, link, onClick }) => {
 
 	return (
 		<span
-			className={`menu-item`}
+			className="menu-item-account"
 			onClick={(e) => {
 				e.stopPropagation();
 				if (link) {
@@ -24,7 +24,7 @@ const MenuItem: FC<IMenuAccountItemProps> = ({ title, link, onClick }) => {
 				}
 			}}
 		>
-			<span>{title}</span>
+			{title}
 		</span>
 	);
 };

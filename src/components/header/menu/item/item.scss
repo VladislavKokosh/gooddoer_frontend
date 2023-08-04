@@ -11,6 +11,7 @@
 	white-space: nowrap;
 	color: $primary;
 	border-bottom: 2px double transparent;
+	transition: color 0.3s ease;
 
 	&_active {
 		border-bottom: 2px double $secondary;

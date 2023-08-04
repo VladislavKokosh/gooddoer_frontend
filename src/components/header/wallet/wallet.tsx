@@ -1,7 +1,9 @@
 import { ethers } from "ethers";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
-import { useWindowSize } from "../../../hooks";
+import { useActions, useWindowSize } from "../../../hooks";
+import { getAccountState } from "../../../store";
 import { Button } from "../../button";
 
 import { Account } from "./account";
@@ -9,17 +11,18 @@ import "./wallet.scss";
 
 const Wallet = () => {
 	const [width] = useWindowSize();
-	const [isMetamaskInstalled, setIsMetamaskInstalled] =
-		useState<boolean>(false);
-	const [account, setAccount] = useState<string | null>(null);
+	const { changeWalletConnect, changeAddress, changeMetamaskIntalledStatus } =
+		useActions();
+	const { address, isMetamaskInstalled } = useSelector(getAccountState);
 
 	useEffect(() => {
 		if ((window as any).ethereum) {
-			setIsMetamaskInstalled(true);
+			changeMetamaskIntalledStatus(true);
 			getAccounts();
 
 			(window as any).ethereum.on("accountsChanged", disconnectWallet);
 		}
+		// eslint-disable-next-line
 	}, []);
 
 	const getAccounts = async (): Promise<void> => {
@@ -28,7 +31,8 @@ const Wallet = () => {
 		});
 		if (accounts.length > 0) {
 			const account: string = ethers.getAddress(accounts[0]);
-			setAccount(account);
+			changeAddress(account);
+			changeWalletConnect(true);
 		}
 	};
 
@@ -38,20 +42,22 @@ const Wallet = () => {
 				method: "eth_requestAccounts",
 			});
 
-			accounts.length && setAccount(accounts[0]);
+			accounts.length && changeAddress(accounts[0]);
+			changeWalletConnect(true);
 		} catch (error: any) {
 			console.log(error);
 		}
 	};
 
 	const disconnectWallet = () => {
-		setAccount(null);
+		changeAddress(null);
+		changeWalletConnect(false);
 	};
 
 	return (
 		<div className="wallet">
 			{isMetamaskInstalled ? (
-				(account && <Account address={account} />) || (
+				(address && <Account address={address} />) || (
 					<Button
 						title={width > 560 ? `Connect MetaMask` : "Connect"}
 						hasSVG

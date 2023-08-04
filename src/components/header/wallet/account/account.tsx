@@ -18,6 +18,7 @@ const Account: FC<IAccountProps> = ({ address }) => {
 
 	return (
 		<div
+			className="container-account"
 			onMouseEnter={() => setVisableMenu("flex")}
 			onMouseLeave={() => setVisableMenu("none")}
 		>
