@@ -18,6 +18,7 @@ const MenuItem: FC<IMenuAccountItemProps> = ({ title, link, onClick }) => {
 				e.stopPropagation();
 				if (link) {
 					navigate(link);
+					onClick();
 				} else {
 					changeVisibleModal(EModalTypes.Account);
 					onClick();
