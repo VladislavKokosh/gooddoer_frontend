@@ -1,0 +1,92 @@
+@import "../../assets/styles/colors";
+
+.profile-main {
+	background-color: white;
+	padding: 120px;
+
+	@media (max-width: 770px) {
+		padding: 120px 60px;
+	}
+
+	@media (max-width: 440px) {
+		padding: 40px 20px;
+	}
+
+	&-header {
+		margin-top: 40px;
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		&_avatar {
+			width: 180px;
+			height: 180px;
+			border-radius: 16px;
+			@media (max-width: 550px) {
+				width: 90px;
+				height: 90px;
+			}
+		}
+		&_address {
+			padding-left: 40px;
+			text-align: center;
+			font-size: 18px;
+			font-family: "Red-Semi";
+			color: rgb(0, 20, 49);
+			@media (max-width: 440px) {
+				padding-left: 10px;
+				font-size: 14px;
+			}
+		}
+		&_link {
+			padding-top: 4px;
+			padding-left: 10px;
+			cursor: pointer;
+		}
+	}
+
+	&-warning {
+		padding: 20px;
+		display: flex;
+		justify-content: space-between;
+		background-color: rgb(255, 247, 224);
+		border: 1px solid rgb(198, 146, 12);
+		border-radius: 8px;
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
+
+		&_left {
+			display: flex;
+			align-items: center;
+			color: rgb(218, 162, 19);
+			font-size: 14px;
+
+			& > *:last-child {
+				padding-left: 10px;
+			}
+
+			@media (max-width: 770px) {
+				font-size: 12px;
+			}
+		}
+		&_right {
+			display: flex;
+			align-items: center;
+			color: rgb(218, 162, 19);
+			font-size: 14px;
+
+			@media (max-width: 770px) {
+				font-size: 12px;
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+.loader {
+	height: calc(100vh - 200px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

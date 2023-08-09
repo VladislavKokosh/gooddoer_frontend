@@ -1,5 +1,11 @@
 const AUTH_RESOURCES = {
-	ENDPOINT: "auth",
+	ENDPOINT: {
+		USER: "user",
+	},
+	PATH: {
+		AUTH: "auth",
+		NONCE: "nonce",
+	},
 };
 
 export { AUTH_RESOURCES };

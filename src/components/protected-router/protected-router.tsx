@@ -1,15 +1,17 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-import { getAuthorizationState } from "../../store";
+import { getAuthState } from "../../store";
 import { SignIn } from "../sign-in";
 
 import { IProtectedRouterProps } from "./protected-router.types";
 
 const ProtectedRouter: FC<IProtectedRouterProps> = ({ children }) => {
-	const { authorization } = useSelector(getAuthorizationState);
+	const { authorization } = useSelector(getAuthState);
 
-	if (!authorization) {
+	useEffect(() => {}, [authorization]);
+
+	if (!localStorage.getItem("accessToken")) {
 		return <SignIn />;
 	}
 

@@ -1,14 +1,28 @@
-import { IReq } from "../../api.types";
-
 interface IAuthInData {
 	signature: string;
 	publicAddress: string;
 }
 
 interface IAuthRes {
-	accessToken: string;
+	data: {
+		accessToken: string;
+	};
 }
 
-interface IAuthIn extends IReq<null, IAuthInData> {}
+interface INonceRes {
+	data: string;
+}
 
-export { IAuthIn, IAuthInData, IAuthRes };
+interface IUser {
+	nonce: string;
+	publicAddress: string;
+	username?: string;
+}
+
+interface IUserRes {
+	data: {
+		user: IUser;
+	};
+}
+
+export { INonceRes, IAuthInData, IAuthRes, IUserRes };
