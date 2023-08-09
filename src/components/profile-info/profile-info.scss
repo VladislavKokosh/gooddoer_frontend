@@ -1,0 +1,10 @@
+.profile-info {
+	padding-top: 30px;
+	display: flex;
+	justify-content: space-between;
+
+	& > * {
+		padding: 40px;
+		margin: 0 30px;
+	}
+}

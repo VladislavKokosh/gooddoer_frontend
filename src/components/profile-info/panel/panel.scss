@@ -1,0 +1,26 @@
+.panel {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	background: rgb(252, 252, 255);
+	box-shadow: rgba(212, 218, 238, 0.4) 0px 3px 20px;
+	border-radius: 12px;
+
+	&-left {
+		font-family: "Red-Semi";
+		color: rgb(0, 20, 49);
+		font-size: 18px;
+		& > * {
+			padding: 10px 0;
+		}
+	}
+
+	&-right {
+		font-family: "Red-Semi";
+		color: rgb(0, 20, 49);
+		font-size: 18px;
+		& > * {
+			padding: 10px 0;
+		}
+	}
+}
