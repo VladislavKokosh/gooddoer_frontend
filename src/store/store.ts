@@ -1,13 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import * as accountAsyncActions from "./account/account.actions";
 import {
 	actions as accountActions,
 	reducer as accountReducer,
 } from "./account/account.slice";
+import * as authAsyncActions from "./auth/auth.actions";
 import {
-	actions as authorizationActions,
-	reducer as authorizationReducer,
-} from "./authorization/authorization.slice";
+	actions as authActions,
+	reducer as authReducer,
+} from "./auth/auth.slice";
 import {
 	actions as modalActions,
 	reducer as modalReducer,
@@ -21,8 +23,8 @@ const store = configureStore({
 	reducer: {
 		modal: modalReducer,
 		toastr: toastrReducer,
-		authorization: authorizationReducer,
 		account: accountReducer,
+		auth: authReducer,
 	},
 	devTools: true,
 });
@@ -33,8 +35,10 @@ type AppDispatch = typeof store.dispatch;
 const allActions = {
 	...modalActions,
 	...toastrActions,
-	...authorizationActions,
+	...authActions,
 	...accountActions,
+	...authAsyncActions,
+	...accountAsyncActions,
 };
 
 export { store, allActions };
