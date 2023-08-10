@@ -20,7 +20,6 @@ const authIn = createAsyncThunk(
 	async ({ signature, publicAddress }: IAuthInData, thunkAPI) => {
 		try {
 			const { data } = await auth.authIn({ signature, publicAddress });
-			console.log(data);
 			return data;
 		} catch (error) {
 			return thunkAPI.rejectWithValue(error);

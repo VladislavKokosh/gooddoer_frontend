@@ -45,7 +45,6 @@ const authSlice = createSlice({
 			.addCase(authIn.fulfilled, (state, { payload }) => {
 				state.isLoading = false;
 				state.authorization = true;
-				console.log(payload);
 				localStorage.setItem("accessToken", payload.accessToken);
 			})
 			.addCase(authIn.rejected, (state) => {

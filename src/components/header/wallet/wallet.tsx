@@ -52,6 +52,7 @@ const Wallet = () => {
 	const disconnectWallet = () => {
 		changeAddress(null);
 		changeWalletConnect(false);
+		localStorage.removeItem("accessToken");
 	};
 
 	return (
