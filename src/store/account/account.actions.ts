@@ -15,4 +15,20 @@ const getUserData = createAsyncThunk(
 	}
 );
 
-export { getUserData };
+const updateUserData = createAsyncThunk(
+	"auth/updateUserData",
+	async (userData: { token: string; username: string }, thunkAPI) => {
+		try {
+			const { data } = await auth.updateUsername(
+				userData.token,
+				userData.username
+			);
+
+			return data.username;
+		} catch (error) {
+			return thunkAPI.rejectWithValue(error);
+		}
+	}
+);
+
+export { getUserData, updateUserData };

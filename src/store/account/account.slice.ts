@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { getUserData } from "./account.actions";
+import { getUserData, updateUserData } from "./account.actions";
 import { IInitState } from "./account.types";
 
 const initialState: IInitState = {
@@ -37,6 +37,16 @@ const accountSlice = createSlice({
 				state.username = payload.username ? payload.username : state.username;
 			})
 			.addCase(getUserData.rejected, (state) => {
+				state.isLoading = false;
+			})
+			.addCase(updateUserData.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(updateUserData.fulfilled, (state, { payload }) => {
+				state.isLoading = false;
+				state.username = payload;
+			})
+			.addCase(updateUserData.rejected, (state) => {
 				state.isLoading = false;
 			});
 	},
