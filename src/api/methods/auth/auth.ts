@@ -1,7 +1,13 @@
 import { restApi } from "../../services";
 
 import { AUTH_RESOURCES } from "./auth.constants";
-import { IAuthInData, IAuthRes, INonceRes, IUserRes } from "./auth.types";
+import {
+	IAuthInData,
+	IAuthRes,
+	INonceRes,
+	IUserRes,
+	IUsernameRes,
+} from "./auth.types";
 
 const getNonceAuth = async (publicAddress: string): Promise<INonceRes> => {
 	return await restApi.request({
@@ -36,7 +42,7 @@ const getUserData = async (token: string): Promise<IUserRes> => {
 const updateUsername = async (
 	token: string,
 	username: string
-): Promise<INonceRes> => {
+): Promise<IUsernameRes> => {
 	const headers = {
 		Authorization: token,
 	};

@@ -1,6 +1,6 @@
 enum EModalTypes {
 	Account = "Account",
-	Sign = "Sign Wallet",
+	UserForm = "Edit Profile",
 }
 
 export { EModalTypes };

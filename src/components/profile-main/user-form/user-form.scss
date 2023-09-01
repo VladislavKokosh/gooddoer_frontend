@@ -1,0 +1,43 @@
+@import "../../../assets/styles/colors";
+
+.user-form {
+	background-color: $secondary;
+	margin: 20px 10px;
+	padding: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15px;
+
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	input {
+		color: $primary;
+		font-family: "Helvetica-Bold";
+		padding: 10px;
+		border: 0px;
+		border-radius: 5px;
+		font-size: 18px;
+		line-height: 1.2;
+	}
+
+	p {
+		font-family: "Helvetica-Bold";
+		color: $primary;
+
+		&:hover {
+			cursor: pointer;
+			background-color: $secondary;
+		}
+		&:active {
+			border-color: $jet;
+		}
+	}
+
+	&-button {
+		margin-top: 20px;
+	}
+}

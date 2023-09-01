@@ -25,4 +25,10 @@ interface IUserRes {
 	};
 }
 
-export { INonceRes, IAuthInData, IAuthRes, IUserRes };
+interface IUsernameRes {
+	data: {
+		username: string;
+	};
+}
+
+export { INonceRes, IAuthInData, IAuthRes, IUserRes, IUsernameRes };
