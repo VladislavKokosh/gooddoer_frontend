@@ -17,7 +17,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: "Helvetica-Bold";
+	font-family: "TEX-Bold";
 	padding: 8px 15px;
 	background-color: $primary;
 	border-radius: 10px;
@@ -47,9 +47,5 @@
 		@media (max-width: 550px) {
 			display: none;
 		}
-	}
-
-	&_address {
-		padding-top: 3px;
 	}
 }

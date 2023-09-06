@@ -15,7 +15,7 @@ const MenuItem: FC<IMenuItemProps> = ({ title, link }) => {
 				navigate(link);
 			}}
 		>
-			<span>{title}</span>
+			{title}
 		</span>
 	);
 };

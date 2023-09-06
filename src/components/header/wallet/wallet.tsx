@@ -16,34 +16,37 @@ const Wallet = () => {
 	const { address, isMetamaskInstalled } = useSelector(getAccountState);
 
 	useEffect(() => {
-		if ((window as any).ethereum) {
+		if (window.ethereum) {
 			changeMetamaskIntalledStatus(true);
 			getAccounts();
-
 			(window as any).ethereum.on("accountsChanged", disconnectWallet);
 		}
 		// eslint-disable-next-line
 	}, []);
 
 	const getAccounts = async (): Promise<void> => {
-		const accounts: string[] = await (window as any).ethereum.request({
-			method: "eth_accounts",
-		});
-		if (accounts.length > 0) {
-			const account: string = ethers.getAddress(accounts[0]);
-			changeAddress(account);
-			changeWalletConnect(true);
+		if (window.ethereum) {
+			const accounts: string[] = await (window as any).ethereum.request({
+				method: "eth_accounts",
+			});
+
+			if (accounts.length > 0) {
+				const account: string = ethers.utils.getAddress(accounts[0]);
+				changeAddress(account);
+				changeWalletConnect(true);
+			}
 		}
 	};
 
 	const connectWallet = async (): Promise<void> => {
 		try {
-			const accounts: string[] = await (window as any).ethereum.request({
-				method: "eth_requestAccounts",
-			});
-
-			accounts.length && changeAddress(accounts[0]);
-			changeWalletConnect(true);
+			if (window.ethereum) {
+				const accounts: string[] = await (window as any).ethereum.request({
+					method: "eth_requestAccounts",
+				});
+				accounts.length && changeAddress(accounts[0]);
+				changeWalletConnect(true);
+			}
 		} catch (error: any) {
 			console.log(error);
 		}

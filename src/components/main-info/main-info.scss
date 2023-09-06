@@ -9,7 +9,7 @@
 	&-container {
 		max-width: 600px;
 		&_title {
-			font-family: "Helvetica-Bold";
+			font-family: "TEX-Bold";
 			color: $primary;
 			font-size: 66px;
 			margin: 0;
@@ -20,9 +20,9 @@
 		}
 		&_description {
 			display: inline-block;
-			font-family: "Helvetica";
+			font-family: "TEX-Regular";
 			color: $jet;
-			font-size: 18px;
+			font-size: 20px;
 		}
 		@media (max-width: 1000px) {
 			max-width: 75%;

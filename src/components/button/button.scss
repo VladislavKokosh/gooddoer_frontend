@@ -3,7 +3,7 @@
 .button-ui {
 	background-color: $primary;
 	border-radius: 10px;
-	font-family: "Helvetica-Bold";
+	font-family: "TEX-Bold";
 	color: #fff;
 	display: flex;
 	align-items: center;
@@ -48,7 +48,7 @@
 	position: relative;
 	height: 2.8em;
 	padding-right: 3.3em;
-	font-family: "Helvetica-Bold";
+	font-family: "TEX-Bold";
 
 	@media (max-width: 530px) {
 		font-size: 14px;

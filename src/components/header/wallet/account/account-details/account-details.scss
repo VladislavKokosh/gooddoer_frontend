@@ -10,7 +10,7 @@
 	&_header {
 		padding: 10px;
 		font-size: 20px;
-		font-family: "Helvetica-Bold";
+		font-family: "TEX-Bold";
 		color: white;
 	}
 
@@ -19,7 +19,7 @@
 		display: flex;
 		align-items: center;
 		font-size: 20px;
-		font-family: "Helvetica-Bold";
+		font-family: "TEX-Bold";
 		color: white;
 		&_icon {
 			border: 2px solid white;
@@ -38,7 +38,7 @@
 		justify-content: space-between;
 		align-items: center;
 		font-size: 14px;
-		font-family: "Helvetica-Bold";
+		font-family: "TEX-Bold";
 		color: white;
 		@media (max-width: 500px) {
 			width: 100%;
