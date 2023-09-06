@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes as Switch } from "react-router-dom";
 
 import { ProtectedRouter } from "../components";
-import { Create, Help, Layout, Main, Profile } from "../modules";
+import { Create, Help, Layout, Main, Profile, Support } from "../modules";
 
 const Routes = () => {
 	return (
@@ -22,6 +22,14 @@ const Routes = () => {
 					element={
 						<ProtectedRouter>
 							<Create />
+						</ProtectedRouter>
+					}
+				/>
+				<Route
+					path="support"
+					element={
+						<ProtectedRouter>
+							<Support />
 						</ProtectedRouter>
 					}
 				/>
