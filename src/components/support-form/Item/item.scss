@@ -1,0 +1,46 @@
+@import "../../../assets/styles/colors";
+
+.support-item {
+	padding: 40px;
+	width: calc(50% - 15px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	border-radius: 25px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 20px;
+	background-color: white;
+	height: 400px;
+
+	&_icon {
+		svg {
+			width: 100px;
+			height: 100px;
+			color: #4e4f8b;
+		}
+	}
+
+	&_title {
+		font-family: "TEX-Bold";
+		font-size: 40px;
+		color: $primary;
+	}
+
+	&_description {
+		margin-top: 10px;
+		font-size: 20px;
+		font-family: "TEX-Regular";
+		color: $primary;
+	}
+
+	&_button {
+		font-size: 18px;
+		font-family: "TEX-Bold";
+		background-color: $secondary;
+		margin-top: 40px;
+		padding: 20px 30px;
+		color: white;
+		border-radius: 25px;
+	}
+}
