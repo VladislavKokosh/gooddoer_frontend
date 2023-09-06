@@ -1,7 +1,7 @@
 .support {
 	margin-top: 80px;
 	&-title {
-		padding: 0 20px;
+		padding: 0 40px;
 		color: white;
 		display: flex;
 		align-items: center;
@@ -11,6 +11,9 @@
 		font-family: "TEX-Bold";
 		background: url("../../assets/images/title-support.svg") center/cover
 			no-repeat;
+		span {
+			width: 600px;
+		}
 	}
 	&-items {
 		margin-top: -40px;
