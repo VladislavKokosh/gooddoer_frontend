@@ -52,3 +52,18 @@
 	font-family: "Red-Semi";
 	src: url("./RedHatText-SemiBold.ttf") format("truetype");
 }
+
+@font-face {
+	font-family: "Red-Light";
+	src: url("./RedHatText-Light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "TEX-Bold";
+	src: url("./TEX-Bold.otf") format("truetype");
+}
+
+@font-face {
+	font-family: "TEX-Bold";
+	src: url("./TEX-Bold.otf") format("truetype");
+}

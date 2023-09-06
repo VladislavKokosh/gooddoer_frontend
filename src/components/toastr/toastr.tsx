@@ -22,6 +22,16 @@ const Toastr: FC<{ autoCloseTime: number }> = ({ autoCloseTime }) => {
 				title: "Success",
 				description: "Copied to clipboard",
 			},
+			[EToastrContent.CreateFundraiser]: {
+				type: EToastrType.Success,
+				title: "Success",
+				description: "The Fundraiser has been successfully established",
+			},
+			[EToastrContent.BackError]: {
+				type: EToastrType.Error,
+				title: "Error",
+				description: "Something went wrong",
+			},
 		}),
 		[]
 	);

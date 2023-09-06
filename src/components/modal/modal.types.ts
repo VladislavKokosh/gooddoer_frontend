@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-import { EModalTypes } from "@/enum";
+import { EModalTypes } from "../../enum";
 
 interface IModalProps extends PropsWithChildren {
 	type: EModalTypes;

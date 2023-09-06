@@ -10,7 +10,7 @@ const Layout = () => {
 			<Header />
 			<div className="layout-container">
 				<Outlet />
-				<Toastr autoCloseTime={3000} />
+				<Toastr autoCloseTime={5000} />
 			</div>
 			<Footer />
 		</div>

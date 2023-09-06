@@ -14,7 +14,7 @@ export const items: IMenuAccountItem[] = [
 	{
 		id: 3,
 		title: "Create a Project",
-		link: "/create-project",
+		link: "/create",
 	},
 	{
 		id: 4,

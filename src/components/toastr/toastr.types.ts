@@ -1,4 +1,4 @@
-import { EToastrContent, EToastrType } from "@/enum/toastr";
+import { EToastrContent, EToastrType } from "../../enum";
 
 type TToastrConfig = {
 	type: EToastrType;
