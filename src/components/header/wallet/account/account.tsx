@@ -2,6 +2,7 @@ import { generateAvatarURL } from "@cfx-kit/wallet-avatar";
 import { FC, useState } from "react";
 
 import { EModalTypes } from "../../../../enum";
+import { cutAddress } from "../../../../utils";
 import { Modal } from "../../../modal";
 
 import { AccountDetails } from "./account-details";
@@ -38,10 +39,7 @@ const Account: FC<IAccountProps> = ({ address }) => {
 					src={address && generateAvatarURL(address)}
 					alt=""
 				/>
-				<div className="account_address">{`${address?.slice(
-					0,
-					6
-				)}...${address?.slice(-6)}`}</div>
+				<div className="account_address">{cutAddress(address as string)}</div>
 				<Modal type={EModalTypes.Account}>
 					<AccountDetails address={address && address} />
 				</Modal>

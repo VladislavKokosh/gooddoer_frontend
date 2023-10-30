@@ -1,0 +1,80 @@
+@import "../../../assets/styles/colors";
+
+.project-card {
+	height: 386px;
+	position: relative;
+	width: 50%;
+	box-shadow: rgba(212, 218, 238, 0.4) 0px 3px 20px;
+	border-radius: 12px;
+	background-color: black;
+	overflow: hidden;
+	&-content {
+		padding: 20px;
+		position: absolute;
+		top: 120px;
+		left: 0px;
+		right: 0px;
+		transition: top 0.3s ease 0s;
+		width: 100%;
+		background-color: white;
+		border-radius: 12px;
+		&:hover {
+			top: 40px;
+		}
+		&_name {
+			padding: 4px 0;
+			display: inline-block;
+			font-family: "TEX-Bold";
+			color: black;
+			font-size: 22px;
+			&:hover {
+				color: $primary-light;
+				cursor: pointer;
+			}
+		}
+		&_beneficiary {
+			padding: 20px 0;
+			font-family: "Red-Semi";
+			font-size: 16px;
+			color: $primary-light;
+		}
+		&_description {
+			padding: 4px 0;
+			height: 60px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-family: "Red-Semi";
+			color: rgb(79, 87, 106);
+			font-size: 16px;
+		}
+		&_amount {
+			padding: 20px 0;
+			font-family: "TEX-Bold";
+			color: black;
+			font-size: 16px;
+		}
+		&_address {
+			padding: 4px 0;
+			font-family: "Red-Semi";
+			line-height: 150%;
+			color: rgb(79, 87, 106);
+			font-size: 16px;
+			span {
+				color: $primary-light;
+				cursor: pointer;
+			}
+		}
+		&_button {
+			margin-top: 20px;
+			padding: 10px 30px;
+			border-radius: 20px;
+			width: 100%;
+			background-color: $primary;
+			font-family: "TEX-Bold";
+			color: white;
+			font-size: 16px;
+			text-align: center;
+			cursor: pointer;
+		}
+	}
+}

@@ -20,7 +20,7 @@ import { Error } from "./error";
 const CreateForm = () => {
 	const [fileMetadata, setFileMetadata] = useState<null | IUploadRes>(null);
 	const provider = useContext(EthersContext);
-	const { addToastrToQueue } = useActions();
+	const { writeFundraiser, addToastrToQueue } = useActions();
 	const navigate = useNavigate();
 
 	const {
@@ -42,9 +42,9 @@ const CreateForm = () => {
 
 	const onSubmit: SubmitHandler<ICreateFormInput> = async (data) => {
 		if (signer) {
-			const { amount, beneficiary, description } = data;
+			const { nameProject, amount, beneficiary, description, category } = data;
 			const contractWithSigner = contract.connect(signer);
-			const fundraisingAmount = ethers.utils.parseEther(amount.toString());
+			const fundraisingAmount = ethers.utils.parseEther(amount);
 
 			const { name, ipfsUrl } = fileMetadata?.data || {};
 
@@ -54,13 +54,26 @@ const CreateForm = () => {
 				ethers.utils.toUtf8Bytes(description)
 			);
 
-			const tx = await contractWithSigner.createFundraiser(
+			await contractWithSigner.createFundraiser(
 				fundraisingAmount.toString(),
 				beneficiary,
 				{ name: nameBytes32, uri: ipfsUrl, hash: hash }
 			);
 
-			console.log(tx);
+			const fundraiserAddress = await contractWithSigner.computeAddress(
+				fundraisingAmount.toString(),
+				beneficiary,
+				{ name: nameBytes32, uri: ipfsUrl, hash: hash }
+			);
+
+			writeFundraiser({
+				name: nameProject,
+				description,
+				fundraiserAddress,
+				fundraisingAmount: amount,
+				beneficiary,
+				category,
+			});
 
 			addToastrToQueue({
 				id: uuidv4(),
@@ -72,7 +85,6 @@ const CreateForm = () => {
 
 	const uploadFile = async (e: ChangeEvent<HTMLInputElement>) => {
 		const files = e.target.files;
-		console.log(files);
 
 		if (!files?.length) return;
 		try {
@@ -125,6 +137,22 @@ const CreateForm = () => {
 				{errors.description && (
 					<Error error={errors.description.message as string} />
 				)}
+				<label>
+					Please select a category. <span>*</span>
+				</label>
+				<select
+					{...register("category", {
+						required: "The category must not be empty.",
+					})}
+				>
+					<option value=""></option>
+					<option value="art">Art & Culture</option>
+					<option value="education">Education</option>
+					<option value="health">Health</option>
+					<option value="technology">Technology</option>
+				</select>
+				{errors.category && <Error error={errors.category.message as string} />}
+
 				<label>
 					File to upload <span>*</span>
 				</label>

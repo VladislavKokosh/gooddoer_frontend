@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import { EToastrContent } from "../../../../../enum";
 import { useActions } from "../../../../../hooks";
+import { cutAddress } from "../../../../../utils";
 import { IAccountProps } from "../account.types";
 
 import "./account-details.scss";
@@ -21,10 +22,9 @@ const AccountDetails: FC<IAccountProps> = ({ address }) => {
 					src={address && generateAvatarURL(address)}
 					alt=""
 				/>
-				<div className="account-details_content_address">{`${address?.slice(
-					0,
-					6
-				)}...${address?.slice(-6)}`}</div>
+				<div className="account-details_content_address">
+					{cutAddress(address as string)}
+				</div>
 			</div>
 			<div className="account-details_footer">
 				<div

@@ -15,3 +15,5 @@ export * from "./profile-main";
 export * from "./profile-info";
 export * from "./create-form";
 export * from "./support-form";
+export * from "./help-header";
+export * from "./help-projects";

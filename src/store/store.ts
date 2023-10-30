@@ -10,6 +10,11 @@ import {
 	actions as authActions,
 	reducer as authReducer,
 } from "./auth/auth.slice";
+import * as fundraiserAsyncActions from "./fundraisers/fundraisers.actions";
+import {
+	actions as fundraiserActions,
+	reducer as fundraiserReducer,
+} from "./fundraisers/fundraisers.slice";
 import {
 	actions as modalActions,
 	reducer as modalReducer,
@@ -25,6 +30,7 @@ const store = configureStore({
 		toastr: toastrReducer,
 		account: accountReducer,
 		auth: authReducer,
+		fundraisers: fundraiserReducer,
 	},
 	devTools: true,
 });
@@ -39,6 +45,8 @@ const allActions = {
 	...accountActions,
 	...authAsyncActions,
 	...accountAsyncActions,
+	...fundraiserActions,
+	...fundraiserAsyncActions,
 };
 
 export { store, allActions };
