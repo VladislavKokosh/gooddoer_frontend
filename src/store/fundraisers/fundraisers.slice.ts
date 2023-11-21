@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 import { getFundraisers, writeFundraiser } from "./fundraisers.actions";
 import { IInitState } from "./fundraisers.types";
@@ -6,12 +6,36 @@ import { IInitState } from "./fundraisers.types";
 const initialState: IInitState = {
 	isLoading: false,
 	fundraisers: null,
+	filterParams: [],
+	filteredFundraisers: null,
 };
 
 const authSlice = createSlice({
 	name: "auth",
 	initialState,
-	reducers: {},
+	reducers: {
+		addFilterParam: (state, { payload }: PayloadAction<string>) => {
+			if (state.filterParams.includes(payload)) return;
+			state.filterParams.push(payload);
+		},
+		removeFilterParam: (state, { payload }: PayloadAction<string>) => {
+			state.filterParams = state.filterParams.filter(
+				(param) => param !== payload
+			);
+		},
+		filterFundraisers: (state) => {
+			if (state.filterParams.length === 0) {
+				state.filteredFundraisers = state.fundraisers;
+			} else {
+				const filteredData =
+					state.fundraisers &&
+					state.fundraisers.filter((item) =>
+						state.filterParams.includes(item.category)
+					);
+				state.filteredFundraisers = filteredData;
+			}
+		},
+	},
 	extraReducers: (builder) => {
 		builder
 			.addCase(getFundraisers.pending, (state) => {
@@ -20,6 +44,7 @@ const authSlice = createSlice({
 			.addCase(getFundraisers.fulfilled, (state, { payload }) => {
 				state.isLoading = false;
 				state.fundraisers = payload;
+				state.filteredFundraisers = payload;
 			})
 			.addCase(getFundraisers.rejected, (state) => {
 				state.isLoading = false;

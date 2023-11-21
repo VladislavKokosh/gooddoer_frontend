@@ -12,21 +12,21 @@ export const items: ICategoryItems[] = [
 	{
 		id: 1,
 		title: "Art & Culture",
-		link: "/art",
+		link: "art",
 	},
 	{
 		id: 2,
 		title: "Education",
-		link: "/education",
+		link: "education",
 	},
 	{
 		id: 3,
 		title: "Health",
-		link: "/health",
+		link: "health",
 	},
 	{
 		id: 4,
 		title: "Technology",
-		link: "/technology",
+		link: "technology",
 	},
 ];

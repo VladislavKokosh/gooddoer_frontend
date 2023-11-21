@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
-import { IUploadRes, upload } from "../../api";
+import { IFileRes, upload } from "../../api";
 import {
 	GOODDOER_FACTORY_ABI,
 	GOODDOER_FACTORY_CONTRACT_ADDRESS,
@@ -18,7 +18,7 @@ import { ICreateFormInput } from "./create-form.types";
 import { Error } from "./error";
 
 const CreateForm = () => {
-	const [fileMetadata, setFileMetadata] = useState<null | IUploadRes>(null);
+	const [fileMetadata, setFileMetadata] = useState<null | IFileRes>(null);
 	const provider = useContext(EthersContext);
 	const { writeFundraiser, addToastrToQueue } = useActions();
 	const navigate = useNavigate();
@@ -42,7 +42,8 @@ const CreateForm = () => {
 
 	const onSubmit: SubmitHandler<ICreateFormInput> = async (data) => {
 		if (signer) {
-			const { nameProject, amount, beneficiary, description, category } = data;
+			const { nameProject, amount, beneficiary, description, category, image } =
+				data;
 			const contractWithSigner = contract.connect(signer);
 			const fundraisingAmount = ethers.utils.parseEther(amount);
 
@@ -65,7 +66,7 @@ const CreateForm = () => {
 				beneficiary,
 				{ name: nameBytes32, uri: ipfsUrl, hash: hash }
 			);
-
+			console.log(image[0]);
 			writeFundraiser({
 				name: nameProject,
 				description,
@@ -73,6 +74,8 @@ const CreateForm = () => {
 				fundraisingAmount: amount,
 				beneficiary,
 				category,
+				docs: ipfsUrl as string,
+				image: image[0],
 			});
 
 			addToastrToQueue({
@@ -85,6 +88,7 @@ const CreateForm = () => {
 
 	const uploadFile = async (e: ChangeEvent<HTMLInputElement>) => {
 		const files = e.target.files;
+		console.log(files);
 
 		if (!files?.length) return;
 		try {
@@ -163,6 +167,18 @@ const CreateForm = () => {
 					onChange={uploadFile}
 				/>
 				{errors.file && <Error error={errors.file.message as string} />}
+
+				<label>
+					Image to upload <span>*</span>
+				</label>
+				<input
+					type="file"
+					className="create-form_input_file"
+					alt="image"
+					{...register("image", { required: "The image should be." })}
+				/>
+				{errors.file && <Error error={errors.file.message as string} />}
+
 				<label>
 					Fundraising amount <span>*</span>
 				</label>

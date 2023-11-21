@@ -1,3 +1,4 @@
+import { Buffer } from "buffer";
 import { formatEther } from "ethers/lib/utils";
 import { FC } from "react";
 
@@ -12,9 +13,19 @@ const ProjectCard: FC<IProjectCardProps> = ({
 	fundraiserAddress,
 	fundraisingAmount,
 	beneficiary,
+	image,
 }) => {
+	const dataURL = `data:${image.contentType};base64,${Buffer.from(
+		image.data
+	).toString("base64")}`;
+
 	return (
-		<div className="project-card">
+		<div
+			className="project-card"
+			style={{
+				backgroundImage: `url(${dataURL})`,
+			}}
+		>
 			<div className="project-card-content">
 				<div className="project-card-content_name">{name}</div>
 				<div className="project-card-content_beneficiary">

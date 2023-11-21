@@ -1,12 +1,23 @@
-interface IUploadInData {
+interface IFileInData {
 	file: File;
 }
 
-interface IUploadRes {
+interface IFileRes {
 	data: {
 		name: string;
 		ipfsUrl: string;
 	};
 }
 
-export { IUploadInData, IUploadRes };
+interface IImageInData {
+	file: File;
+}
+
+interface IImageRes {
+	data: {
+		message: string;
+		id: string;
+	};
+}
+
+export { IFileInData, IFileRes, IImageInData, IImageRes };

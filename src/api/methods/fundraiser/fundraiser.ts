@@ -17,18 +17,28 @@ const writeNewFundraiser = async ({
 	fundraisingAmount,
 	beneficiary,
 	category,
+	docs,
+	image,
 }: IFundraiser): Promise<void> => {
-	return await restApi.request({
+	const formData = new FormData();
+	formData.append("name", name);
+	formData.append("description", description);
+	formData.append("fundraiserAddress", fundraiserAddress);
+	formData.append("fundraisingAmount", fundraisingAmount);
+	formData.append("beneficiary", beneficiary);
+	formData.append("category", category);
+	formData.append("docs", docs);
+	formData.append("file", image);
+
+	const headers = {
+		"Content-Type": "multipart/form-data",
+	};
+
+	await restApi.request({
 		method: "POST",
 		url: `/${FUNDRAISER_RESOURCES.ENDPOINT.FUNDRAISER}`,
-		data: {
-			name,
-			description,
-			fundraiserAddress,
-			fundraisingAmount,
-			beneficiary,
-			category,
-		},
+		data: formData,
+		headers,
 	});
 };
 

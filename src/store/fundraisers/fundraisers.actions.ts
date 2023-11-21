@@ -26,6 +26,8 @@ const writeFundraiser = createAsyncThunk(
 			fundraisingAmount,
 			beneficiary,
 			category,
+			docs,
+			image,
 		}: IFundraiser,
 		thunkAPI
 	) => {
@@ -37,6 +39,8 @@ const writeFundraiser = createAsyncThunk(
 				fundraisingAmount,
 				beneficiary,
 				category,
+				docs,
+				image,
 			});
 		} catch (error) {
 			return thunkAPI.rejectWithValue(error);

@@ -5,6 +5,7 @@ interface ICreateFormInput {
 	amount: string;
 	beneficiary: string;
 	category: string;
+	image: FileList;
 }
 
 export { ICreateFormInput };

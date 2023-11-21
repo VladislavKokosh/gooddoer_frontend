@@ -1,6 +1,7 @@
 const UPLOAD_RESOURCES = {
 	ENDPOINT: {
-		UPLOAD: "upload",
+		FILE: "file",
+		IMAGE: "image",
 	},
 };
 
