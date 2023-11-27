@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { MutatingDots } from "react-loader-spinner";
 import { useSelector } from "react-redux";
 import {
-	getFilterFundraisersState,
+	getFoundFundraisersState,
 	getFundraisersState,
 } from "src/store/fundraisers";
 
@@ -16,7 +16,7 @@ import { Projects } from "./projects";
 const HelpProjects = () => {
 	const { getFundraisers } = useActions();
 	const { isLoading } = useSelector(getFundraisersState);
-	const fundraisers = useSelector(getFilterFundraisersState);
+	const fundraisers = useSelector(getFoundFundraisersState);
 
 	useEffect(() => {
 		getFundraisers();

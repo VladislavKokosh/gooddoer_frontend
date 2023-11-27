@@ -27,7 +27,10 @@ const CategoryItems = () => {
 
 	return (
 		<div className="category-items">
-			<div className="category-items-button_left" onClick={scrollToLeft}>
+			<div
+				className="category-items-button_left category-items-button"
+				onClick={scrollToLeft}
+			>
 				{"<"}
 			</div>
 			<div className="category-items_content" ref={scrollRef}>
@@ -35,7 +38,10 @@ const CategoryItems = () => {
 					<CategoryItem key={id} {...props} />
 				))}
 			</div>
-			<div className="category-items-button_right" onClick={scrollToRight}>
+			<div
+				className="category-items-button_right category-items-button"
+				onClick={scrollToRight}
+			>
 				{">"}
 			</div>
 		</div>

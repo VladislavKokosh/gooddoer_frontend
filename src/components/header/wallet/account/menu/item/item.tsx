@@ -8,7 +8,7 @@ import "./item.scss";
 import { IMenuAccountItemProps } from "./item.types";
 
 const MenuItem: FC<IMenuAccountItemProps> = ({ title, link, onClick }) => {
-	const { changeVisibleModal } = useActions();
+	const { changeVisibleModal, changeVisibleMenu } = useActions();
 	const navigate = useNavigate();
 
 	return (
@@ -16,6 +16,7 @@ const MenuItem: FC<IMenuAccountItemProps> = ({ title, link, onClick }) => {
 			className="menu-item-account"
 			onClick={(e) => {
 				e.stopPropagation();
+				changeVisibleMenu(false);
 				if (link) {
 					navigate(link);
 					onClick();

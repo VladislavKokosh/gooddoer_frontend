@@ -15,8 +15,10 @@ interface Fundraiser {
 interface IInitState {
 	isLoading: boolean;
 	fundraisers: null | Fundraiser[];
+	searchText: string;
 	filterParams: string[];
 	filteredFundraisers: null | Fundraiser[];
+	foundFundraisers: null | Fundraiser[];
 }
 
 export { IInitState };

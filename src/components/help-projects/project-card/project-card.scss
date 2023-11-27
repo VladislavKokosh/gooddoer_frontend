@@ -1,13 +1,15 @@
 @import "../../../assets/styles/colors";
 
 .project-card {
+	padding: 0 10px 0 10px;
 	height: 386px;
 	position: relative;
-	width: 50%;
 	box-shadow: rgba(212, 218, 238, 0.4) 0px 3px 20px;
 	border-radius: 12px;
-	overflow: hidden;
-
+	overflow: auto;
+	&::-webkit-scrollbar {
+		width: 0;
+	}
 	&-content {
 		padding: 20px;
 		position: absolute;

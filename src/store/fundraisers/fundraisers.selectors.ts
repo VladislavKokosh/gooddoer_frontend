@@ -1,7 +1,13 @@
 import { TStore } from "../store";
 
 const getFundraisersState = ({ fundraisers }: TStore) => fundraisers;
-const getFilterFundraisersState = ({ fundraisers }: TStore) =>
+const getFilteredFundraisersState = ({ fundraisers }: TStore) =>
 	fundraisers.filteredFundraisers;
+const getFoundFundraisersState = ({ fundraisers }: TStore) =>
+	fundraisers.foundFundraisers;
 
-export { getFundraisersState, getFilterFundraisersState };
+export {
+	getFundraisersState,
+	getFilteredFundraisersState,
+	getFoundFundraisersState,
+};

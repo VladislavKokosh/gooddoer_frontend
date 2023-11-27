@@ -6,13 +6,20 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+	@media (max-width: 450px) {
+		padding: 40px 0 60px 0;
+	}
 	&-title {
 		font-size: 50px;
 		font-family: "TEX-Bold";
 		color: $primary;
+		@media (max-width: 450px) {
+			font-size: 30px;
+		}
 	}
 	&-form {
-		width: 700px;
+		width: 80%;
+
 		display: flex;
 		flex-direction: column;
 		label {
@@ -36,6 +43,11 @@
 			&:focus {
 				border: 2px solid $primary;
 			}
+			@media (max-width: 450px) {
+				font-size: 12px;
+				padding: 14px 10px;
+				height: 40px;
+			}
 		}
 
 		&_area {
@@ -51,6 +63,10 @@
 			&:focus {
 				border: 2px solid $primary;
 			}
+			@media (max-width: 450px) {
+				font-size: 12px;
+				padding: 14px 10px;
+			}
 		}
 
 		&-funds {
@@ -62,12 +78,18 @@
 				color: rgb(29, 30, 31);
 				margin: 0;
 				padding: 20px 0 4px 0;
+				@media (max-width: 450px) {
+					font-size: 16px;
+				}
 			}
 			&_description {
 				font-size: 16px;
 				font-family: "Red-Light";
 				color: rgb(29, 30, 31);
 				padding-bottom: 6px;
+				@media (max-width: 450px) {
+					font-size: 12px;
+				}
 			}
 		}
 

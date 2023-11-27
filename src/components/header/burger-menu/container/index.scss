@@ -1,0 +1,12 @@
+.burger-menu-container {
+	position: absolute;
+	background-color: white;
+	top: 80px;
+	left: -20px;
+	right: -20px;
+	height: calc(100vh - 80px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}

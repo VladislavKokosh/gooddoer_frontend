@@ -16,6 +16,10 @@ import {
 	reducer as fundraiserReducer,
 } from "./fundraisers/fundraisers.slice";
 import {
+	actions as menuActions,
+	reducer as menuReducer,
+} from "./menu/menu.slice";
+import {
 	actions as modalActions,
 	reducer as modalReducer,
 } from "./modal/modal.slice";
@@ -31,6 +35,7 @@ const store = configureStore({
 		account: accountReducer,
 		auth: authReducer,
 		fundraisers: fundraiserReducer,
+		menu: menuReducer,
 	},
 	devTools: true,
 });
@@ -47,6 +52,7 @@ const allActions = {
 	...accountAsyncActions,
 	...fundraiserActions,
 	...fundraiserAsyncActions,
+	...menuActions,
 };
 
 export { store, allActions };
